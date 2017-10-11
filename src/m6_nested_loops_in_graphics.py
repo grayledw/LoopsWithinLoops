@@ -12,7 +12,7 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate them. """
     run_test_draw_L()
-    run_test_draw_wall_on_right()
+    # run_test_draw_wall_on_right()
 
 
 def run_test_draw_L():
@@ -83,6 +83,20 @@ def draw_L(window, circle, r, c):
     # TODO: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
+
+
+    for j in range(r):
+        circle.attach_to(window)
+
+        y = circle.center.y + (2 * circle.radius)
+
+        for k in range(j + 1):
+            new_circle = rg.Circle(rg.Point(circle.center.x + (2 * circle.radius), circle.center.y), circle.radius)
+            new_circle.fill_color = circle.fill_color
+            new_circle.attach_to(window)
+
+
+        window.render()
 
 
 def run_test_draw_wall_on_right():
