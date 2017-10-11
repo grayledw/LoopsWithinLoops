@@ -9,8 +9,8 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 
 def main():
     """ Calls the other functions to test them. """
-    run_test_multiply_numbers()
-    # run_test_sum_numbers()
+    # run_test_multiply_numbers()
+    run_test_sum_numbers()
     # run_test_print_characters()
     # run_test_print_characters_slanted()
 
@@ -140,7 +140,7 @@ def multiply_numbers(sequence_of_lists):
 def run_test_sum_numbers():
     """ Tests the    sum_numbers    function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # Done: 3. Implement this TEST function.
     #   It TESTS the  sum_numbers  function defined below.
     #   Include at least **   3   ** tests (we wrote two for you).
     # ------------------------------------------------------------------
@@ -161,6 +161,21 @@ def run_test_sum_numbers():
 
     # TO DO 3 (continued): Add your ADDITIONAL test(s) here:
 
+    # Test 3:
+    expected = 18
+    answer = sum_numbers([(0, 1, 2), (2, 3), [1, 2, 3, 4]])
+    print('Expected and actual are:', expected, answer)
+
+    # Test 4:
+    expected = 6
+    answer = sum_numbers(([1], [2], [3]))
+    print('Expected and actual are:', expected, answer)
+
+    # Test 5:
+    expected = 15
+    answer = sum_numbers(([6], [5], [4]))
+    print('Expected and actual are:', expected, answer)
+
 
 def sum_numbers(seq_seq):
     """
@@ -173,9 +188,20 @@ def sum_numbers(seq_seq):
                     and each item in the subsequences is a number.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
+
+    total = 0
+
+    for j in range(len(seq_seq)):
+
+        sublist = seq_seq[j]
+
+        for k in range(len(sublist)):
+            total = total + sublist[k]
+
+    return total
 
 
 def run_test_print_characters():
